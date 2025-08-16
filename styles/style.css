@@ -4,20 +4,21 @@
   box-sizing: border-box;
 }
 
-html {
+html, body {
   block-size: 100%;
+  margin: 0;
 }
 
 .page {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
   inline-size: 1200px;
-  block-size: 100%;
 }
 
 h1,
@@ -54,9 +55,11 @@ ol {
 
 .content {
   display: flex;
-  align-items: center;
+  padding-block: 133px;
+  align-items: flex-end;
   gap: 30px;
   width: 1140px; 
+  margin-top: 6px;
 }
 
 .search-form {
@@ -67,27 +70,26 @@ ol {
 }
 
 .search-form__fieldset-title {
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, sans-serif;
   font-weight: 400;
   font-size: 18px;
-  font-style: Regular;
   line-height: 100%;
-  letter-spacing: 0%;
+  margin-bottom: 5px;
 }
 
 .title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
-  font-style: Bold;
   line-height: 94%;
-  letter-spacing: 0%;
   text-transform: uppercase;
-
+  margin: 0 0 18px;
 }
 
 .content__details {
-  align-content: center;
+  display: flex;
+  flex: 0 0 399px;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 }
@@ -99,20 +101,12 @@ ol {
 }
 
 .content__list-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-self: center;
   height: 298px;
-  margin-top: 26px;
-  overflow-x: hidden;
   overflow-y: auto;
 }
 
 .result {
-  position: relative;
-  top: 43px;
+  flex: 0 0 711px;
 }
 
 .result__video-container {
@@ -145,6 +139,8 @@ ol {
 }
 
 .content__video-card-description-container {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
   max-width: 196px;
   max-height: 103px;
@@ -160,7 +156,7 @@ ol {
 .content__card-link {
   display: block;
   color: #FFF;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   text-decoration: none;
 }
 
@@ -190,20 +186,16 @@ ol {
 }
 
 .content__video-card-title {
-  margin-bottom: 6px;
   overflow: hidden;
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
-  font-style: Bold;
-  letter-spacing: 0%;
   text-transform: uppercase;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .content__video-card-description {
-  display: -webkit-box;
   width: 100%;
   max-width: 196px;
   padding-bottom: 5px;
@@ -212,11 +204,12 @@ ol {
   font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
   font-size: 18px;
-  font-style: normal;
-  line-height: 16px;
+  display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
-  white-space: wrap;
+  overflow: hidden;
+  white-space: normal;        /* ← так правильно */
+  line-height: 16px; 
 }
 
 .visually-hidden {
@@ -244,10 +237,7 @@ ol {
   gap: 5px;
   width: fit-content;
   outline: none;
-}
-
-.search-form__fieldset-title {
-  margin-bottom: 5px;
+  cursor: pointer;
 }
 
 .search-form__textfield {
@@ -261,12 +251,10 @@ ol {
   padding: 0;
   outline: 0;
   color: #FFF;
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, sans-serif;
   font-weight: 400;
   font-size: 18px;
-  font-style: Regular;
   line-height: 100%;
-  letter-spacing: 0%;
   background-color: transparent;
   appearance: none;  
 }
@@ -288,13 +276,6 @@ ol {
 .search-form__textfield::placeholder {
   margin: 0;
   color: rgb(255 255 255 / 0.7);
-}
-
-.search-form__label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
 }
 
 .search-form__pseudo-checkbox {
@@ -340,9 +321,7 @@ ol {
   font-family: Fira Sans Condensed, sans-serif;
   font-weight: 700;
   font-size: 18px;
-  font-style: Bold;
   line-height: 100%;
-  letter-spacing: 0%;
   text-align: center;
   background-color: transparent;
   cursor: pointer;
@@ -374,7 +353,6 @@ ol {
 
 .more-button {
   display: flex;
-  flex: 0 0 34px;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
@@ -384,8 +362,7 @@ ol {
   font-family: Fira Sans Condensed, sans-serif;
   font-weight: 700;
   font-size: 18px;
-  font-style: Bold;
   line-height: 100%;
-  letter-spacing: 0%;
+  margin-top: 30px;
 }
 
