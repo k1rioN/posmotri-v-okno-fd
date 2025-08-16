@@ -101,6 +101,7 @@ ol {
 }
 
 .content__list-container {
+  position: relative;
   height: 298px;
   overflow-y: auto;
 }
@@ -365,4 +366,3 @@ ol {
   line-height: 100%;
   margin-top: 30px;
 }
-
